@@ -1,6 +1,6 @@
 {
-    "ignore": [
-      "controllers/users.json"
-    ]
-   
-  }
+  "ignore": [
+    "/controllers/users.json"
+  ]
+
+}

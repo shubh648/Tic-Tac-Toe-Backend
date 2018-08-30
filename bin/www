@@ -9,7 +9,7 @@ var debug = require('debug')('tic-tac-toe-backend:server');
 var http = require('http');
 
 var playerList = require('../controllers/playerList');
-
+const eventCtrl = require('../controllers/event');
 /**
  * Get port from environment and store in Express.
  */
@@ -40,12 +40,11 @@ app.socket.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log('user disconnected')
   })
-
   socket.on('message',playerList.msg);
   socket.on('getData',playerList.getData);
   socket.on('getPosition',playerList.getPosition);
   socket.on('setPosition',playerList.setPosition);
-
+  socket.on('newGame',playerList.newGame)
 })
 
 /**
